@@ -12,11 +12,7 @@
  -->
 
 <template>
-  <div class="postcards" :style="
-  'width:' + postSizeW + 'px;' + 
-  'height:' + postSizeH + 'px;' +
-  'color:' + postTextColor +';' +
-  'font-size:' + postTextSize +'px;'">
+  <div class="postcards" :style="carStyle">
 	  <img :src="stampURL" >
       {{postContent}}
   </div>
@@ -48,7 +44,13 @@
 				postTextColor: "#5E150C",
 				postBold: false,
 				//明信片默认邮票
-				stampURL: "https://static.codemao.cn/whale/Skcuc_dQ4?imageMogr2/thumbnail/!200x200r/blur/1x0/quality/100|imageslim"
+				stampURL: "https://static.codemao.cn/whale/Skcuc_dQ4?imageMogr2/thumbnail/!200x200r/blur/1x0/quality/100|imageslim",
+        carStyle: {
+            width: this.postSizeW + 'px;' ,
+            height:  this.postSizeH + "px",
+            color:  this.postTextColor ,
+            font-size:  this.postTextSize,
+        }
 			}
 		},
 		computed: {
